@@ -1,0 +1,30 @@
+#端口
+server:
+  port: 10000
+#开发环境配置  
+spring:
+  application:
+    name: ElasticSearch
+  profiles:
+    active: dev
+  #数据库配置  
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC&characterEncoding=utf8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  #elasticsearch配置
+  data:
+    elasticsearch:
+      cluster-name: el-application
+      cluster-nodes: 120.79.155.196:9300
+      repositories:
+        enabled: true
+  
+    
+#mybatis相关
+mybatis:
+  typeAliasesPackage: com.sto.es.po
+  mapperLocations: classpath:mapper/*.xml   
+  
