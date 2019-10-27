@@ -1,6 +1,6 @@
 #端口
 server:
-  port: 10000
+  port: 9091
 #开发环境配置  
 spring:
   application:
