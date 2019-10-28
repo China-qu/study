@@ -1,19 +1,20 @@
 package com.sto.es.controller;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.core.Ordered;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@SuppressWarnings("deprecation")
-@Configuration
-public class LoginController extends WebMvcConfigurerAdapter {
+@Controller
+@RequestMapping("/login")
+public class LoginController {
 	
-	@Override
-   public void addViewControllers( ViewControllerRegistry registry ) {
-       registry.addViewController( "/" ).setViewName( "forward:/index.html" );
-       registry.setOrder( Ordered.HIGHEST_PRECEDENCE );
-       super.addViewControllers( registry );
-   }
-
+	@RequestMapping("/")
+	public String login() {
+		return "/index.html";
+	}
+	
+	@RequestMapping("/index")
+	public String index() {
+		return "/index.html";
+	}
+	
 }
