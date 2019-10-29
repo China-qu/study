@@ -21,7 +21,16 @@ spring:
       cluster-nodes: 120.79.155.196:9300
       repositories:
         enabled: true
-  
+  #页面模板
+  thymeleaf:
+    prefix: classpath:/templates/
+    check-template-location: true
+    suffix: .html
+    encoding: UTF-8
+    servlet:
+      content-type: text/html; charset=utf-8
+    mode: HTML5
+    cache: false
     
 #mybatis相关
 mybatis:

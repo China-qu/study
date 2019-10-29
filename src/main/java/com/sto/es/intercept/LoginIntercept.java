@@ -28,6 +28,7 @@ public class LoginIntercept implements HandlerInterceptor {
 			response.sendRedirect("/login/index");
 			return false;
 		}
+		session.setAttribute("user", "user");
 		return true;
 	}
 	

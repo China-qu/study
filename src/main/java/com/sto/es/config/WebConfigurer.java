@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 import com.sto.es.intercept.LoginIntercept;
@@ -18,7 +19,7 @@ public class WebConfigurer extends WebMvcConfigurationSupport {
 	protected void addInterceptors(InterceptorRegistry registry) {
 		// addPathPatterns("/**") 表示拦截所有的请求，
         // excludePathPatterns("/login", "/register") 表示除了登陆与注册之外，因为登陆注册不需要登陆也可以访问
-        registry.addInterceptor(loginIntercept).addPathPatterns("/**").excludePathPatterns("/login", "/register");
+        registry.addInterceptor(loginIntercept).addPathPatterns("/**").excludePathPatterns("/login/*", "/register/*");
         super.addInterceptors(registry);    
 	}
 	
